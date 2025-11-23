@@ -19,7 +19,8 @@ localStorage, counters, and a polished UI.
 
 ## 📸 Screenshots
 
-    ![App Screenshot](assets/images/[screenshot1.png](https://github.com/SohanEdiri/To-Do-List/blob/81816c6b2cdce328730a1e63ad608fc6f572873a/assets/images/screenshot1.png))
+    ![App Screenshot](https://github.com/SohanEdiri/To-Do-List/blob/81816c6b2cdce328730a1e63ad608fc6f572873a/assets/images/screenshot1.png)
+
 
 ## 🛠 Technologies Used
 
