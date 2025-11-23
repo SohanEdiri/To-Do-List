@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #5f00ff, #c800ff);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+
+/* To-Do App Box */
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    max-height: 550px;
+}
+
+.todo-app h2 {
+    font-size: 28px;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ffc107, #ff6a00);
+}
+
+/* Task List Items */
+ul li {
+    list-style: none;
+    font-size: 18px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color: white;
+    backdrop-filter: blur(5px);
+    transition: 0.2s ease;
+}
+
+ul li:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(assets/circle-regular-full.svg);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 10px;
+    opacity: 0.8;
+}
+
+/* Checked Task */
+ul li.checked {
+    color: #aaffaa;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(assets/circle-check-solid-full.svg);
+    opacity: 1;
+}
+
+#list-container {
+    max-height: 250px;  
+    overflow-y: auto;   
+}
+
+#list-container::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Delete Button */
+.delete-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.delete-button:hover  {
+    background: rgba(255, 100, 100, 0.4);
+    color: #ff3b3b;
+    opacity: 1;
+}
+
+.edit-button {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.edit-button:hover {
+    background: rgba(255, 100, 100, 0.4);
+    color: #ff3b3b;
+    opacity: 1;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    color: white;
+    font-size: 16px;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.counters p {
+    margin: 0;
+    padding: 8px 15px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    flex: 1;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.counters p:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 350px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+
+    padding: 25px;
+    text-align: center;
+    color: white;
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;         
+    transition: 0.3s ease;
+}
+
+.popup-show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;           
+}
+
+.popup-container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+#close-button {
+    background: linear-gradient(135deg, #ff7a7a, #ff3d3d);
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+#close-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff9999, #ff4d4d);
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .row {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 30px;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .todo-app {
+        margin-top: 50px;
+        max-height: 700px;
+    }
+
+    .counters {
+        flex-direction: column;
+    }
+
+    .counters p {
+        width: 100%;
+    }
+
+    .popup-container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    .popup-container h1 {
+        font-size: 18px;
+    }
+
+    #close-button {
+        width: 100%;
+    }
+}

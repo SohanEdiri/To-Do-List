@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <!-- link Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>To-Do List</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add task here..." />
+          <button id="addTask">Add task</button>
+        </div>
+        <ul id="list-container"></ul>
+        <div class="counters">
+          <p id="totalCounter">Total Tasks: 0</p>
+          <p id="completedCounter">Completed Tasks: 0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-container" id="popup">
+      <h1>Tasks cannot be empty!</h1>
+      <button id="close-button">Close</button>
+    </div>
+
+    <!-- Link JS file -->
+    <script src="script.js"></script>
+  </body>
+</html>
