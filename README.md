@@ -7,14 +7,14 @@ localStorage, counters, and a polished UI.
 
 ## 🚀 Features
 
--   Add tasks\
--   Edit tasks\
--   Delete tasks\
--   Mark tasks as completed\
--   LocalStorage persistence\
--   Total & completed counters\
--   Custom popup warning\
--   Fully responsive design\
+-   Add tasks
+-   Edit tasks
+-   Delete tasks
+-   Mark tasks as completed
+-   LocalStorage persistence
+-   Total & completed counters
+-   Custom popup warning
+-   Fully responsive design
 -   Modern UI with glassmorphism
 
 ## 📸 
@@ -26,9 +26,9 @@ https://sohanediri.github.io/To-Do-List/
 
 ## 🛠 Technologies Used
 
--   HTML5\
--   CSS3\
--   JavaScript (ES6+)\
+-   HTML5
+-   CSS3
+-   JavaScript (ES6+)
 -   LocalStorage
 
 ## ▶️ Running the Project
@@ -54,9 +54,9 @@ Counters are updated by counting `<li>` elements.
 
 ## 📌 Future Improvements
 
--   Drag & drop\
--   Priority labels\
--   Filters (All/Completed/Active)\
+-   Drag & drop
+-   Priority labels
+-   Filters (All/Completed/Active)
 -   Animations
 
 ## 🧑‍💻 Author
